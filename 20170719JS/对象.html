@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 对象的分类（功能特点）
+		 * 1.函数
+		 * 	可以执行
+		 * 2.数组
+		 * 	通过[下标]操作内部数据
+		 * 3.Object对象（一般对象）
+		 * 	通过.来操作内部数据
+		 */
+//		//1.函数
+//		function fun(){
+//			console.log("fun()");
+//		}
+//		console.log(fun.constructor)
+//		fun()
+//		console.log("-----")
+//		//2.数组
+//		var arr = [1,"ab"]
+//		arr.push(true)
+//		console.log(arr[2])
+//		//3.Object对象（一般对象）
+//		var obj = {}
+//		console.log(obj.constructor)
+//		console.log(obj.toString())
+
+/**
+ * 创建对象
+ * 1.new Object()
+ * 2.{ }
+ * 		{
+ * 			propertyName1:value,
+ * 			propertyName2:function(){ }
+ * 	
+ * 		}
+ * 3.new 构造函数（）
+ * 
+ * 比较:
+ * 1与2比：2在创建对象的同事还可以为对象添加属性和方法
+ * 2与3比：如果只创建一个对象--》选择2方式
+ * 		   如果创建多个对象--》选择3方式
+ */
+
+	/*
+ 	 有一个人, 叫张三, 年龄18, 他还能做自我介绍: 我叫xxx, 年方yyy
+	 */
+	//1.new Object()
+	var p1 = new Object()
+	p1.name = "ZhangSan"
+	p1.age = 18
+	p1.introduce = function(){
+		console.log("我是"+this.name+",今年"+this.age+"岁")
+	}
+	p1.introduce()
+	//2.{}
+	var p2 = {
+		name:"李四",
+		age:19,
+		introduce:function(){
+			console.log("我是"+this.name+",今年"+this.age+"岁")
+		}
+	}
+	p2.introduce()
+	//3.new 构造函数（）
+	function Person(name,age){
+		this.name = name;
+		this.age = age;
+		this.introduce=function(){
+			console.log("我是"+this.name+",今年"+this.age+"岁")
+		}
+	}
+	var p3 = new Person("小红",5)
+	var p4 = new Person("小明",6)
+	p3.introduce()
+	p4.introduce()
+	</script>
+</html>

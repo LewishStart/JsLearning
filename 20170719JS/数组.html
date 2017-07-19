@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 一、数组的创建
+		 * 1.[]
+		 * 2.new Array()
+		 */
+		//1.[]
+//		var arr=[];
+//      console.log(arr.length);
+//      arr=[2,"abc",true,function(){
+//      	console.log("数组里存的函数")
+//      },{name:"Jack"},[2,3]];
+//      arr[3]();
+//      console.log(arr[4].name)
+//      console.log(arr[5][1])
+        
+        //2. new Array()
+      	//没有实参:创建一个空数组
+//      var arr2 = new Array();
+//      console.log(arr2.length)
+//      //创建制定元素的数组
+//      arr2 = new Array(2,"abc",true,function(){
+//      	console.log("数组里存的函数")
+//      },{name:"Jack"},[2,3]);
+//      arr2[3]();
+//      console.log(arr2[4].name)
+//      console.log(arr2[5][1])
+        
+ /*
+数据的CRUD:
+	C : create 增加
+	R : Read 读取
+	U : Update 更新
+	D : Delete 删除
+ */
+//		var arr = [2, "abc", true];
+//		//length: 返回数组的长度(元素的个数)
+//		console.log(arr.length);
+//		//添加新元素
+//		//[index]
+//		arr[1] = "atguigu"; //如果下标已经存在, 是更新而不是添加, 长度不变
+//		arr[arr.length] = 3; //在数组的最后添加一个元素, 长度增加1
+//		arr[arr.length+2] = 4; //在数组的长度下标后面的下标指定数据-->长度为指定下标+1, 中间没有指定的值为undefind
+//		console.log(arr + "  length="+arr.length);
+//		//push(value) : 添加到最后
+//		arr.push(5);
+//		console.log(arr + "  length="+arr.length);
+//		//unshift(value): 添加到开头
+//		arr.unshift(6);
+//		console.log(arr + "  length="+arr.length);
+//
+//		/*读取元素*/
+//		//[index]
+//		console.log(arr[arr.length-1]);//取最后
+//		console.log(arr[0]);//取第一个
+//		console.log(arr[5]);//undefined
+//		console.log(arr[arr.length]); //没有此下标返回undefined
+//		
+//		/*更新元素*/
+//		//[index] index的范围为[0, length-1]
+//		arr[2] = "xfzhang";
+//		console.log(arr);
+//		/*删除元素*/
+//		arr = [1, 2, 3];
+//		//arr.pop()：删除数组中最后一个元素, 并返回它
+//		arr.pop();
+//		console.log(arr + "  length="+arr.length);
+//		//arr.shift()：删除数组第一个元素,并返回它
+//		arr.shift();
+//		console.log(arr + "  length="+arr.length);
+//		//delete arr[index] : 变为undefined, 数组的length不变
+//		delete arr[0];
+//		console.log(arr[0] + "  length="+arr.length);
+//		//可以通过设置length属性，删除数组后面的元素
+//		arr = [1,3,4,5,6];
+//		arr.length = 3;
+//		console.log(arr + "  length="+arr.length);
+
+/**
+ * 数组遍历
+ * 1.一般for循环
+ * 2.forEach（function）
+ * 3.for..in循环
+ */
+//	var arr=[1,3,5];
+//	/**
+//	 * 一般for循环
+//	 * 显示遍历，不能遍历非数字下标的元素，中途可以终止break
+//	 */
+//	for(var i=0;i<arr.length;i++){
+//		console.log("第"+(i+1)+"个元素为: "+arr[i]);
+//	}
+//	/**
+//	 * forEach(function)
+//	 * 隐式遍历，不能遍历到非数字下标元素，不能中途停止
+//	 */
+//	arr.forEach(function(element, index){
+//			console.log("第"+(index+1)+"个元素为: "+element);
+//			//break; 不可用
+//			//return false; 没作用
+//		});
+//	/*3. for..in循环*/
+//	//能遍历到非数字下标的元素
+//	//它看到的下标都为String
+//	//如果不能保证数组中的元素下标为数值时, 采用for...in
+//	//能中途停止
+//		for(var name in arr){
+//			console.log("第"+name+"个元素为: "+arr[name]);
+//		}
+
+/**
+ * 数组的常用方法
+ */
+	//1.concat():连接数组,返回连接后的新数组，原数组不变
+	var arr = [4,2,6]
+//	var arr2 = arr.concat(7,8)
+//	console.log(arr2.toString())
+//	console.log(arr.toString())
+	//2.join(separator)
+//	console.log(arr.join())
+//	console.log(arr.join('+'))
+	//3.pop删除最后一个元素
+	//4.unshift删除第一个元素
+	//5.push向数组末添加一个元素
+	//6.shift向数组头添加一个元素
+	//7.splice删除或插入元素
+	/**
+	 * 删除 splice(m,n)
+	 * m:从哪个位置开始删除
+	 * n:删除多少项
+	 */
+//	arr.splice(2,1)
+//	console.log(arr.toString())
+	/**
+	 * 插入 
+ 	 * splice(m,n,..)
+ 	 * m：从哪个位置开始插入
+ 	 * n：删除多少项
+ 	 * ..:要插入的数据
+ 	 */
+// 	 arr.splice(1,0,0,0)
+// 	 console.log(arr.toString())
+ 	 /**
+ 	  * 替换
+ 	  */
+// 	 arr.splice(1,2,0,0)
+// 	 console.log(arr.toString())
+	//8.reverse 颠倒数组中元素的顺序
+//	arr.reverse()
+//	console.log(arr.toString())
+	//9.sort 对数组中的元素进行排序
+//	arr.sort(function(left,right){
+//		return right-left;
+//	});
+//	console.log(arr.toString())
+	/*10. slice(): 取出从指定开始到结束下标的元素组成新数组返回*/
+		arr = [3, 2, 1, 4];
+		result = arr.slice(1, 3);
+		console.log(result);
+		//等同于
+		console.log(result.toString());
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 变量的声明提前
+		 * - 在JS中如果声明一个变量时使用了var关键字，则使用var声明的变量将会在
+		 * 		所有代码执行前被创建，但是并不赋值。
+		 * - 但是如果不写var关键字，该变量不会被提前声明，不写var声明的变量都会
+		 * 		直接设置为window对象的属性
+		 * 
+		 * 函数的声明提前
+		 * -在JS中如果使用函数声明表达式创建一个函数时，该函数会在所有代码执行之前
+		 * 		被创建，所以可以在函数声明之前调用函数
+		 * -使用匿名函数形式创建的函数不会被提前声明，而是在执行到他所在行时才会创建
+		 */
+		
+		//函数声明表达式，会声明提前
+		function func(){
+			console.log("func");
+		}
+		
+		//字面量函数
+		var func2 = function(){
+			console.log("func2");
+		}
+	</script>
+</html>

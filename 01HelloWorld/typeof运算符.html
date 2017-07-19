@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script>
+		var a = 12;
+		a = Infinity;
+		a = NaN;
+		a = "abc";
+		a = true;
+		a = undefined;
+		a = null;
+//		console.log(typeof a);
+		function fun () {
+			console.log("fun()");
+			console.log("fun2()");
+		}
+//		console.log(typeof fun);
+		
+		var obj = {
+			name:"Tom",
+			age:12
+		};
+		console.log(typeof obj);
+		
+		var arr = [1,"ad",false];
+		console.log(typeof arr);
+		
+		console.log(obj instanceof Object);
+		console.log(obj instanceof Array);
+		
+		console.log(arr instanceof Object);
+		console.log(arr instanceof Array);
+	</script>
+</html>

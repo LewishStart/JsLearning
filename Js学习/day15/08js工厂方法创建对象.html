@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 工厂方法创建对象
+		 */
+		function personFactory(name,age){
+			var obj = new Object();
+			obj.name = name;
+			obj.age = age;
+			obj.indroduce = function(){
+				document.write("我叫"+this.name+",今年"+this.age+"岁");
+			}
+			return obj;
+		}
+		var p1 = personFactory("Bob",12);
+		var p2 = personFactory("Bomb",18);
+		p1.indroduce();
+		p2.indroduce();
+	</script>
+</html>

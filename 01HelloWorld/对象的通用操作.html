@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		/**
+		 * 对象的属性与方法
+		 * 属性：对象内部的一个数据（属性），数据由：名称（属性名）和值（属性值）组成
+		 * 方法：是一种特别的属性，属性值是function，属性名称改为方法名，值为函数
+		 * 
+		 * 对象通用操作
+		 */
+		//给对象添加属性
+		console.userName = "abc";
+		//给对象添加一个方法
+		console.showName = function(){
+			console.log(this.userName);
+		}
+		//读取/设置对象的属性值
+//		alert(console.userName);
+//		console.userName = "haha";
+//		alert(console.userName);
+		//调用对象的方法
+//		console.showName();
+		function Fun(){
+			
+		}
+		console.log(Fun.toString());
+	</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	/*
+	查找数组对象中 age 大于 18 对象 , 编写函数 filterAdult,满足
+ 	//执行
+	filterAdult([
+	    {age: 19, name:'Jack'},
+	    {age: 5, name:'Apple'},
+	    {age: 12, name:'Lynn'},
+	    {age: 25, name:'David'}
+	]);
+	//返回
+	[
+		{age: 19, name:'Jack'},
+	    {age: 25, name:'David'}
+	]
+	*/
+//	function filterAdultMethod1(personArr){
+//		var result = [];
+//		for (var i=0;i<personArr.length;i++) {
+//			if(personArr[i].age>18)
+//				result.push(personArr[i]);
+//		}
+//		return result;
+//	}
+//	function filterAdultMethod2(personArr){
+//		var result = [];
+//		personArr.forEach(function (ele,index) {
+//			if(ele.age>18)
+//				result.push(ele);
+//		})
+//		return result;
+//	}
+//	
+//	var ps = filterAdultMethod2([
+//				    {age: 19, name:'Jack'},
+//				    {age: 5, name:'Apple'},
+//				    {age: 12, name:'Lynn'},
+//				    {age: 25, name:'David'}
+//				]);
+//		//遍历ps, 输出对象中的属性
+//		for(var i=0;i<ps.length;i++) {
+//			var person = ps[i];
+//			console.log("age:"+person.age+", name:"+person.name);
+//			//console.log("age:"+ps[i].age+", name:"+ps[i].name);
+//		}
+	/**
+	 /*
+	判断数组中是否所有的数字都大于 0 
+	编写函数 isAllNumPositive,满足
+	isAllNumPositive([1, 2, 3, 4]);  // 返回 true
+	isAllNumPositive([1, 2, 3, 4, -1]);  // 返回 false
+	 */
+	function isAllNumPositiveMethod1(numArr){
+		for (var i=0;i<numArr.length;i++) {
+			if(numArr[i]<=0)
+				return false;
+		}
+		return true;
+	}
+	
+	function isAllNumPositiveMethod2(numArr){
+		for(var index in numArr){
+			if(numArr[index]<=0){
+				return false;	
+			}
+		}
+		return true;
+	}
+	console.log(isAllNumPositiveMethod2([1, 2, 3, 4]));  //true
+	console.log(isAllNumPositiveMethod2([1, 2, 3, 4, -1])); //false
+	</script>
+</html>

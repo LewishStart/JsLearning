@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+	/**
+	 * 当我们调用一个函数时，解析器每次都会传递进一个隐含的参数this。
+	 * this会根据函数的调用方式不同具有不同的值
+	 * 1.当以函数的形式调用时，this永远都是window。
+	 * 2.当以方法的形式调用时，代表当前对象。
+	 */
+//		var name = "我是全局变量";
+//		function func1(){
+//			document.write(this.name);
+//			document.write(this instanceof Window);
+//		}
+//		func1();
+
+		var name = "猪八戒";
+		var obj = {
+			name:"孙悟空",
+			sayName:function(){
+				function test(){
+					document.write(this.name);
+				}
+				test();
+			}
+		}
+		obj.sayName();
+		
+//		var fun = obj.sayName();
+//		fun();
+	</script>
+</html>

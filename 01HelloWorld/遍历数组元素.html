@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type = "text/javascript">
+		/**
+		 * 1.一般的for循环
+		 * 2.数组的方法：forEach(function)
+		 * 3.for..in循环
+		 */
+		var arr = [1,2,3];
+		arr["pwd"]=567;
+		arr.push(4);
+//		document.write("arr="+arr+"<br />"+"length="+arr.length);
+		/**
+		 * 1.一般for循环
+		 * 特点：  1）显示遍历
+		 * 		2）不能遍历到非数字下标的元素
+		 * 		3）中途可以break
+		 */
+		document.write("一般for循环遍历:")
+		for (var i=0;i<arr.length;i++) {
+			document.write(arr[i]);
+			if(i!=arr.length-1)
+			document.write(",");
+		}
+		/**
+		 * 2.数组的forEach(function)
+		 * 隐式遍历：方法内部自动完成
+		 * 不能遍历到非数字下标的元素
+		 * 不能中途停止
+		 */
+		document.write("<br />"+"forEach遍历:");
+		arr.forEach(function(element,index){
+			document.write("element="+element+",index="+index+"&nbsp;");
+		})
+		/**
+		 * 3.for..in循环
+		 * 能遍历到非数字下标的元素
+		 * 它看到的下标都为String
+		 * 如果不能保证数组中的元素下标为数值是，采用for...in
+		 * 能中途停止
+		 */
+		document.write("<br />"+"for..in循环:")
+		for(var index in arr){
+			document.write(arr[index]+"&nbsp;");
+		}
+		</script>
+</html>
